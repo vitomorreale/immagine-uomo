@@ -1,0 +1,56 @@
+<main id="main">
+
+  <section class="max-w-7xl mx-auto px-5 sm:px-8 pt-14 pb-10 text-center">
+    <span class="section-label justify-center">Gallery</span>
+    <h1 class="font-display text-4xl sm:text-5xl mt-4">I nostri lavori</h1>
+    <p class="mt-5 max-w-2xl mx-auto text-[var(--color-ink-soft)] leading-relaxed">
+      Una selezione dei tagli realizzati in salone. Le immagini di questa demo sono segnaposto:
+      da sostituire con fotografie reali del negozio, del team e dei lavori svolti (anche in
+      ottica prima/dopo).
+    </p>
+    <div class="flex flex-wrap justify-center gap-2 mt-8">
+      <button type="button" data-filter="all" class="chip selected">Tutti</button>
+      <button type="button" data-filter="taglio" class="chip">Taglio</button>
+      <button type="button" data-filter="barba" class="chip">Barba</button>
+      <button type="button" data-filter="colore" class="chip">Colore</button>
+    </div>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-5 sm:px-8 pb-20">
+    <div id="gallery-grid" class="columns-2 sm:columns-3 lg:columns-4 gap-4 [&>*]:mb-4 [&>*]:break-inside-avoid">
+      <div class="ph-image alt rounded-2xl aspect-[3/4]" data-cat="taglio"><div class="ph-caption text-[10px]">Sfumatura</div></div>
+      <div class="ph-image rounded-2xl aspect-square" data-cat="barba"><div class="ph-caption text-[10px]">Rasatura</div></div>
+      <div class="ph-image light rounded-2xl aspect-[4/5]" data-cat="taglio"><div class="ph-caption text-[10px]">Taglio classico</div></div>
+      <div class="ph-image rounded-2xl aspect-[4/5]" data-cat="barba"><div class="ph-caption text-[10px]">Contorno barba</div></div>
+      <div class="ph-image alt rounded-2xl aspect-square" data-cat="colore"><div class="ph-caption text-[10px]">Ritocco colore</div></div>
+      <div class="ph-image light rounded-2xl aspect-[3/4]" data-cat="taglio"><div class="ph-caption text-[10px]">Fade</div></div>
+      <div class="ph-image rounded-2xl aspect-[4/5]" data-cat="taglio"><div class="ph-caption text-[10px]">Styling</div></div>
+      <div class="ph-image alt rounded-2xl aspect-square" data-cat="barba"><div class="ph-caption text-[10px]">Asciugamano caldo</div></div>
+      <div class="ph-image light rounded-2xl aspect-[4/5]" data-cat="taglio"><div class="ph-caption text-[10px]">Taglio bambino</div></div>
+      <div class="ph-image rounded-2xl aspect-square" data-cat="barba"><div class="ph-caption text-[10px]">Barba curata</div></div>
+      <div class="ph-image alt rounded-2xl aspect-[4/5]" data-cat="colore"><div class="ph-caption text-[10px]">Coprigrigi</div></div>
+      <div class="ph-image light rounded-2xl aspect-square" data-cat="taglio"><div class="ph-caption text-[10px]">Interno salone</div></div>
+    </div>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-5 sm:px-8 pb-20 text-center">
+    <div class="rounded-[2rem] bg-white/60 border border-[var(--color-cream-2)] p-10">
+      <h2 class="font-display text-2xl sm:text-3xl">Seguici anche su Instagram</h2>
+      <p class="mt-3 text-[var(--color-ink-soft)]">Le foto più recenti dei nostri lavori: collega qui il feed @immagine_uomo_parrucchieri per mantenere la gallery sempre aggiornata senza intervenire sul sito.</p>
+      <a href="https://instagram.com/immagine_uomo_parrucchieri/" target="_blank" rel="noopener" class="btn btn-outline mt-6">Vai al profilo Instagram</a>
+    </div>
+  </section>
+
+</main>
+<script>
+  document.querySelectorAll('[data-filter]').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      document.querySelectorAll('[data-filter]').forEach(b=>b.classList.remove('selected'));
+      btn.classList.add('selected');
+      const f = btn.dataset.filter;
+      document.querySelectorAll('#gallery-grid > *').forEach(item=>{
+        item.style.display = (f==='all' || item.dataset.cat===f) ? '' : 'none';
+      });
+    });
+  });
+</script>

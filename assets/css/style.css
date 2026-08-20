@@ -1,0 +1,205 @@
+/* ==========================================================================
+   Immagine Uomo — Custom styles (layered on top of Tailwind CDN utilities)
+   Palette ripresa dall'insegna reale del negozio (rosso-ruggine su nero)
+   ========================================================================== */
+
+:root{
+  --color-ink:      #1a1512;   /* near-black, warm undertone */
+  --color-ink-soft:  #4d443e;
+  --color-cream:     #f6f1e9;  /* warm off-white */
+  --color-cream-2:   #ece3d4;
+  --color-gold:      #c1440e;  /* burnt orange/rust from the shop signage */
+  --color-gold-dark: #93330a;
+  --color-rose:      #d9702f;
+  --font-display: 'Bebas Neue', 'Oswald', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+}
+
+html{ scroll-behavior:smooth; }
+
+body{
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  background: var(--color-cream);
+}
+
+h1,h2,h3,h4,.font-display{
+  font-family: var(--font-display);
+  letter-spacing:.015em;
+  text-transform: uppercase;
+  line-height: 1.05;
+}
+
+.text-gold{ color: var(--color-gold); }
+.bg-gold{ background-color: var(--color-gold); }
+.border-gold{ border-color: var(--color-gold); }
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.5rem;
+  padding:.85rem 1.75rem;
+  border-radius:999px;
+  font-weight:600;
+  font-size:.95rem;
+  letter-spacing:.01em;
+  transition:transform .15s ease, box-shadow .15s ease, background-color .15s ease;
+  white-space:nowrap;
+}
+.btn:active{ transform: translateY(1px); }
+
+.btn-primary{
+  background: var(--color-ink);
+  color: var(--color-cream);
+  box-shadow: 0 6px 20px -6px rgba(33,27,23,.45);
+}
+.btn-primary:hover{ background:#33291f; box-shadow:0 10px 26px -8px rgba(33,27,23,.55); }
+
+.btn-gold{
+  background: var(--color-gold);
+  color: #241a10;
+  box-shadow: 0 6px 20px -6px rgba(184,137,95,.55);
+}
+.btn-gold:hover{ background: var(--color-gold-dark); }
+
+.btn-outline{
+  background: transparent;
+  color: var(--color-ink);
+  border: 1.5px solid var(--color-ink);
+}
+.btn-outline:hover{ background: var(--color-ink); color: var(--color-cream); }
+
+.btn-outline-light{
+  background: transparent;
+  color:#fff;
+  border: 1.5px solid rgba(255,255,255,.7);
+}
+.btn-outline-light:hover{ background:#fff; color: var(--color-ink); }
+
+/* Placeholder "photo" blocks — replace with real photography.
+   Deliberately styled (not stock imagery) to avoid shipping copyrighted photos
+   and to make it obvious to the client which spots need real photos. */
+.ph-image{
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:
+    radial-gradient(120% 140% at 15% 10%, rgba(255,255,255,.14), transparent 55%),
+    linear-gradient(135deg, #17130f 0%, #2a1c14 45%, #7a2c0a 100%);
+  color: rgba(255,255,255,.92);
+  text-align:center;
+}
+.ph-image.alt{
+  background:
+    radial-gradient(120% 140% at 85% 15%, rgba(255,255,255,.16), transparent 55%),
+    linear-gradient(135deg, #e0783a 0%, #c1440e 55%, #7a2c0a 100%);
+}
+.ph-image.light{
+  background:
+    radial-gradient(120% 140% at 20% 20%, rgba(255,255,255,.7), transparent 55%),
+    linear-gradient(135deg, #ece3d4 0%, #ddccb0 60%, #c7a877 100%);
+  color: var(--color-ink-soft);
+}
+.ph-image::after{
+  content:"";
+  position:absolute; inset:0;
+  background-image: repeating-linear-gradient(45deg, rgba(255,255,255,.035) 0 2px, transparent 2px 6px);
+  pointer-events:none;
+}
+.ph-image .ph-caption{
+  position:relative;
+  z-index:1;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:.5rem;
+  padding:1rem;
+  font-family: var(--font-body);
+  font-size:.75rem;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  opacity:.85;
+}
+.ph-image svg{ width:2rem; height:2rem; opacity:.9; }
+
+.card-hover{ transition: transform .2s ease, box-shadow .2s ease; }
+.card-hover:hover{ transform: translateY(-4px); box-shadow: 0 20px 40px -18px rgba(33,27,23,.35); }
+
+.section-label{
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  font-size:.75rem;
+  font-weight:700;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color: var(--color-gold-dark);
+}
+.section-label::before{
+  content:"";
+  width:1.5rem; height:2px;
+  background: var(--color-gold);
+  display:inline-block;
+}
+
+/* Sticky header shadow on scroll */
+header.site-header.scrolled{
+  box-shadow: 0 6px 24px -12px rgba(33,27,23,.25);
+}
+
+/* Mobile nav */
+#mobile-menu{ transition: max-height .3s ease; overflow:hidden; }
+
+/* WhatsApp floating button */
+.wa-float{
+  position:fixed;
+  right:1.1rem;
+  bottom:1.1rem;
+  z-index:50;
+  width:3.4rem; height:3.4rem;
+  border-radius:999px;
+  background:#25D366;
+  color:#fff;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 10px 26px -8px rgba(37,211,102,.6);
+  transition: transform .15s ease;
+}
+.wa-float:hover{ transform: scale(1.06); }
+
+/* FAQ accordion */
+.faq-item[open] .faq-icon{ transform: rotate(45deg); }
+.faq-icon{ transition: transform .2s ease; }
+.faq-item summary::-webkit-details-marker{ display:none; }
+.faq-item summary{ list-style:none; cursor:pointer; }
+
+/* Star rating */
+.stars{ color: var(--color-gold); letter-spacing:.1em; }
+
+/* Booking widget stepper */
+.step-dot{ width:.55rem; height:.55rem; border-radius:999px; background:#e6d9c8; }
+.step-dot.active{ background: var(--color-gold); }
+.booking-step{ display:none; }
+.booking-step.active{ display:block; animation: fadein .25s ease; }
+@keyframes fadein{ from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);} }
+
+.chip{
+  display:inline-flex; align-items:center;
+  padding:.55rem 1rem;
+  border-radius:999px;
+  border:1.5px solid #e6d9c8;
+  font-size:.875rem;
+  font-weight:600;
+  cursor:pointer;
+  transition: all .15s ease;
+  background:#fff;
+}
+.chip.selected{ background: var(--color-ink); color:#fff; border-color: var(--color-ink); }
+
+.skip-link{
+  position:absolute; left:-999px; top:auto;
+  background:var(--color-ink); color:#fff; padding:.75rem 1.25rem; border-radius:.5rem; z-index:100;
+}
+.skip-link:focus{ left:1rem; top:1rem; }

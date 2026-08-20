@@ -1,0 +1,75 @@
+<main id="main">
+
+  <section class="max-w-7xl mx-auto px-5 sm:px-8 pt-14 pb-10 text-center">
+    <span class="section-label justify-center">Contatti</span>
+    <h1 class="font-display text-4xl sm:text-5xl mt-4">Vieni a trovarci</h1>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-5 sm:px-8 pb-20 grid lg:grid-cols-5 gap-10">
+
+    <div class="lg:col-span-2 space-y-6">
+      <div class="rounded-2xl bg-white border border-[var(--color-cream-2)] p-7">
+        <p class="text-xs font-semibold uppercase tracking-wider text-[var(--color-ink-soft)] mb-2">Indirizzo</p>
+        <p class="font-semibold">Via Filippo di Giovanni 72, 90146 Palermo</p>
+      </div>
+      <div class="rounded-2xl bg-white border border-[var(--color-cream-2)] p-7">
+        <p class="text-xs font-semibold uppercase tracking-wider text-[var(--color-ink-soft)] mb-2">Telefono &amp; WhatsApp</p>
+        <a href="tel:+393200987400" class="font-semibold block hover:text-gold">320 098 7400</a>
+        <a href="https://wa.me/393200987400" target="_blank" rel="noopener" class="btn btn-gold mt-4 w-full">Scrivici su WhatsApp</a>
+      </div>
+      <div class="rounded-2xl bg-white border border-[var(--color-cream-2)] p-7">
+        <p class="text-xs font-semibold uppercase tracking-wider text-[var(--color-ink-soft)] mb-2">Instagram</p>
+        <a href="https://instagram.com/immagine_uomo_parrucchieri/" target="_blank" rel="noopener" class="font-semibold hover:text-gold">@immagine_uomo_parrucchieri</a>
+      </div>
+      <div class="rounded-2xl bg-white border border-[var(--color-cream-2)] p-7">
+        <p class="text-xs font-semibold uppercase tracking-wider text-[var(--color-ink-soft)] mb-2">Orari</p>
+        <ul class="space-y-1.5 text-sm">
+          <li class="flex justify-between"><span>Martedì – Sabato</span><span class="font-semibold">8:00 – 20:00</span></li>
+          <li class="flex justify-between"><span>Domenica – Lunedì</span><span class="font-semibold">Chiuso</span></li>
+        </ul>
+      </div>
+      <div class="rounded-2xl bg-white border border-[var(--color-cream-2)] p-7">
+        <p class="text-xs font-semibold uppercase tracking-wider text-[var(--color-ink-soft)] mb-3">Social</p>
+        <div class="flex gap-3">
+          <a href="https://facebook.com/Immagineuomo79" target="_blank" rel="noopener" class="btn btn-outline text-sm">Facebook</a>
+          <a href="https://instagram.com/immagine_uomo_parrucchieri/" target="_blank" rel="noopener" class="btn btn-outline text-sm">Instagram</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="lg:col-span-3 space-y-8">
+      <div class="rounded-2xl overflow-hidden border border-[var(--color-cream-2)] aspect-[4/3] sm:aspect-[16/10]">
+        <iframe
+          title="Mappa Immagine Uomo - Via Filippo di Giovanni 72, Palermo"
+          src="https://www.google.com/maps?q=Via+Filippo+di+Giovanni+72,+90146+Palermo&output=embed"
+          class="w-full h-full border-0" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+      <form class="rounded-2xl bg-white border border-[var(--color-cream-2)] p-7 space-y-4" onsubmit="return false;">
+        <h2 class="font-display text-xl mb-2">Richiedi informazioni</h2>
+        <p class="text-sm text-[var(--color-ink-soft)] mb-2">Compila il form: ti risponderemo entro 24h. Per richieste urgenti scrivici su WhatsApp.</p>
+        <div>
+          <label for="c-name" class="block text-sm font-semibold mb-1.5">Nome e cognome</label>
+          <input id="c-name" type="text" required class="w-full rounded-xl border border-[var(--color-cream-2)] px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold">
+        </div>
+        <div>
+          <label for="c-email" class="block text-sm font-semibold mb-1.5">Email</label>
+          <input id="c-email" type="email" required class="w-full rounded-xl border border-[var(--color-cream-2)] px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold">
+        </div>
+        <div>
+          <label for="c-msg" class="block text-sm font-semibold mb-1.5">Messaggio</label>
+          <textarea id="c-msg" rows="4" required class="w-full rounded-xl border border-[var(--color-cream-2)] px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold"></textarea>
+        </div>
+        <label class="flex items-start gap-2 text-xs text-[var(--color-ink-soft)]">
+          <input type="checkbox" required class="mt-1">
+          Ho letto e accetto la <a href="privacy-cookie-policy.html" class="text-gold underline underline-offset-4">Privacy Policy</a>.
+        </label>
+        <button type="submit" class="btn btn-primary w-full">Invia richiesta</button>
+        <p class="text-xs text-[var(--color-ink-soft)]">Demo: il form non invia realmente dati. Va collegato a un servizio email/CRM in produzione.</p>
+      </form>
+    </div>
+
+  </section>
+
+</main>
